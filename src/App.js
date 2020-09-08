@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
-import First from './First'
-
+import First from './First';
+import Second from "./Second";
 import axios from "axios";
 import styled from "styled-components";
 import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
@@ -32,7 +32,7 @@ const Info = styled.div`
   text-align: center;
 `;
 
-function Films () {
+export function Films () {
   const [films, setFilms] = useState([]);
 
   useEffect(() => {
@@ -59,7 +59,7 @@ function FilmListItem ({film, idf}) {
   );
 }
 
-function Film (props) {
+export function Film (props) {
   const [film, setFilm] = useState();
   let { filmId } = useParams();
 
@@ -162,20 +162,6 @@ export function Person (props) {
   );
 }
 
-
-
-function Second () {
-  return (
-    <Switch>
-        <Route path="/films">
-          <Films />
-        </Route>
-        <Route path="/:filmId">
-          <Film />
-        </Route>
-      </Switch>
-  )
-}
 
 export default function App() {
   return (
