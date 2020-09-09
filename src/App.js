@@ -16,14 +16,12 @@ const Wrapper = styled.div`
   }
 `;
 
-
 const Search = styled.div`
   padding: 20px;
   cursor: pointer;
   color: black;
   text-align: center;
 `;
-
 
 const Info = styled.div`
   padding: 20px;
@@ -49,7 +47,6 @@ export function Films () {
     <div>{ films.map(toFilm) }</div>
   );
 }
-
 
 function FilmListItem ({film, idf}) {
   return (
@@ -88,7 +85,6 @@ export function Film (props) {
 
 //end of films
 
-
 export function People () {
   const [people, setPeople] = useState([]);
   const [search, setSearch] = useState('');
@@ -103,12 +99,9 @@ export function People () {
 
   const toPerson = useCallback((person, index) => <PersonListItem name={person.name} id={index + 1} />);
 
- 
-
   const filteredPeople = people.filter( character => {
     return character.name.toLowerCase().includes(search.toLowerCase())
   } ) 
-
 
   return (
     <Search>
@@ -123,7 +116,6 @@ export function People () {
     </Search>
   );
 }
-
 
 function PersonListItem ({name, id}) {
   return (
@@ -148,7 +140,6 @@ export function Person (props) {
   if (!person) {
     return <div>Loading...</div>;
   }
-
 
   return (
     <Info>

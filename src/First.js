@@ -11,8 +11,8 @@ function First () {
           <Route path="/:personId">
             <Person />
           </Route>
-        </Switch>
+     </Switch>
     )
-  }
+}
 
 export default First 
